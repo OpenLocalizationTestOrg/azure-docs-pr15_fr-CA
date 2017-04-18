@@ -1,0 +1,4 @@
+
+* [Enregistrer un ID App pour votre application](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html#//apple_ref/doc/uid/TP40012582-CH30-SW991). Créer un ID d’application explicite (pas un caractère générique App ID) et, pour l' **ID de groupe**, utilisez l' **ID de lot** exacte qui se trouve dans votre projet de démarrage rapide Xcode. Il est également essentiel que vous cochez l’option **d’Envoi des Notifications** . 
+
+* Ensuite, [à préparer pour la configuration des notifications de type Pousser](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6), créer un « Développement » ou « Distribution » certificat SSL.
