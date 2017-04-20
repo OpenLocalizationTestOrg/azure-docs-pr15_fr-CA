@@ -1,0 +1,52 @@
+# <a name="internet-of-things-security-best-practices"></a>Meilleures pratiques de sécurité Internet des objets
+
+Pour sécuriser un Internet des objets (IoT) infrastructure nécessite une stratégie de sécurité en profondeur rigoureuse. Cette stratégie vous impose sécuriser les données dans le nuage, protéger l’intégrité des données lors de leur transit sur le réseau internet public et configurer les périphériques en toute sécurité. Chaque couche génère une meilleure garantie de sécurité de l’infrastructure globale.
+
+## <a name="secure-an-iot-infrastructure"></a>Sécuriser une infrastructure IoT
+
+Cette stratégie de sécurité en profondeur peut être développée et exécutée avec la participation active des différents acteurs impliqués dans la fabrication, le développement et le déploiement de l’infrastructure et IoT périphériques. Voici une description détaillée de ces lecteurs.  
+
+- **Fabricant de matériel IoT/intégrateur**: en général, ce sont les fabricants de matériel IoT déployée, aux intégrateurs de l’assemblage du matériel de différents fabricants ou fournisseurs de matériel pour un déploiement IoT fabriqués ou intégré par d’autres fournisseurs.
+- **Les développeurs de solutions IoT**: le développement d’une solution IoT est généralement effectué par un développeur de la solution. Ce développeur peut en partie d’une équipe interne ou un intégrateur système (SI) spécialisé dans cette activité. Les développeurs de solutions IoT peuvent développer les divers composants de la solution IoT à partir de zéro, intégrer divers composants prêts à l’emploi ou open source ou adopter des solutions préconfigurées avec adaptation mineure.
+- **Responsable du déploiement de la solution IoT**: après une IoT solution développée, il doit être déployé sur le terrain. Cela implique le déploiement d’un matériel, interconnexion de périphériques et du déploiement de solutions de périphériques ou dans le nuage.
+- **Opérateur de solution IoT**: après le IoT solution est déployée, elle nécessite des opérations à long terme, analyse, des mises à niveau et maintenance. Ceci est possible par une équipe de traducteurs internes qui comprend des informations spécialistes en technologie, opérations matérielles et les équipes de maintenance et spécialistes du domaine qui contrôlent le comportement correct de l’ensemble de l’infrastructure IoT.
+
+Les sections qui suivent fournissent des méthodes conseillées pour chacun de ces lecteurs pour aider à développer, déployer et exploiter une infrastructure IoT sécurisée.
+
+## <a name="iot-hardware-manufacturerintegrator"></a>Fabricant de matériel IoT/intégrateur
+
+Voici les méthodes conseillées pour les fabricants de matériel IoT et intégrateurs de matériel.
+
+- **Matériel de portée pour la configuration minimale requise**: la conception du matériel doit inclure les fonctionnalités minimales requises pour le fonctionnement du matériel et rien de plus. Un exemple consiste à inclure des ports USB uniquement si nécessaire pour le fonctionnement du périphérique. Ces fonctionnalités supplémentaires d’ouvrir le périphérique pour les vecteurs d’attaque indésirables qui doit être évitée.
+- **Rendre les falsifications de matériel**: création de mécanismes pour détecter les falsifications physiques, telles que l’ouverture du capot du périphérique ou la suppression d’une partie de l’équipement. Ces altérations de signaux peuvent faire partie du flux de données téléchargé sur le cloud, ce qui pourrait d’avertir les opérateurs de ces événements.
+- **Construire autour de matériel sécurisé**: permet de variation de stock si, générer des fonctionnalités de sécurité, comme le stockage sécurisé et crypté ou démarrer la fonctionnalité de base de Module de plateforme sécurisée (TPM). Ces fonctionnalités font de périphériques plus sécurisés et vous aider à protéger l’infrastructure IoT globale.
+- **Vérifiez les mises à jour sécurisées**: mises à niveau du micrologiciel pendant la durée de vie de l’équipement sont inévitables. Création de périphériques avec des chemins d’accès sécurisés pour les mises à jour et assurance cryptographique des versions de firmware permettra le périphérique soit sécurisé pendant et après la mise à niveau.
+
+## <a name="iot-solution-developer"></a>Développeurs de solutions IoT
+
+Les meilleures pratiques pour les développeurs de solutions IoT sont les suivantes :
+
+- **Méthodologie de développement de logiciels sécurisés suivantes**: développement d’un logiciel sécurisé requiert sol une réflexion en commun sur la sécurité, depuis le commencement du projet à sa mise en œuvre, de test et de déploiement. Les choix des plates-formes, des langages et des outils sont influencées avec cette méthodologie. Le cycle de développement de sécurité de Microsoft fournit une approche étape par étape à créer des logiciels sécurisés.
+- **Logiciel open source de choisir avec soin**: logiciels Open source permet de développer rapidement des solutions. Lorsque vous choisissez les logiciels open source, prendre en compte le niveau d’activité de la Communauté pour chaque composant de l’open source. Une communauté active garantit que le logiciel est compatible et que les problèmes sont détectés et résolus. Sinon, un logiciel open source obscure et inactif ne peut-être pas pris en charge et problèmes ne seront probablement pas être découvert.
+- **Intégrer avec précaution**: de nombreuses failles de sécurité de logiciel existent à la limite de bibliothèques et d’API. Fonctionnalités qui ne sont peut-être pas nécessaires pour le déploiement en cours est peut-être toujours disponible via une couche API. Pour garantir la sécurité globale, vérifiez toutes les interfaces des composants d’intégration de failles de sécurité.      
+
+## <a name="iot-solution-deployer"></a>Responsable du déploiement de la solution IoT
+
+Méthodes conseillées pour aux responsables de déploiement IoT solution sont les suivants :
+
+- **Déploiement de matériel en toute sécurité**: IoT déploiements peuvent nécessiter un matériel pour être déployé dans des emplacements non sécurisés, comme dans les espaces publics ou les paramètres régionaux qui fonctionne sans surveillance. Dans ce cas, assurez-vous que le déploiement de matériel est inviolable dans la mesure maximale. Si USB ou les autres ports sont disponibles sur le matériel, assurez-vous qu’ils sont couverts en toute sécurité. De nombreux vecteurs d’attaque peuvent utiliser comme point d’entrée.
+- **Protéger les clés d’authentification**: au cours du déploiement, chaque périphérique requiert l’ID de périphérique et associés à des clés d’authentification générés par le service en nuage. Conservez ces clés physiquement même après le déploiement. Toute clé compromise peut être utilisée par un dispositif malveillant d’usurper l’identité d’un périphérique existant.
+
+## <a name="iot-solution-operator"></a>Opérateur de solution IoT
+
+Les meilleures pratiques pour les opérateurs de solution IoT sont les suivantes :
+
+- **Le système de mise à jour**: s’assurer que tous les pilotes de périphériques et de systèmes d’exploitation de périphérique sont mis à niveau vers les versions les plus récentes. Si vous activez les mises à jour automatiques dans Windows 10 (IoT ou autres références SKU), Microsoft conserve à jour, en fournissant un système d’exploitation sécurisé pour les périphériques IoT. Maintien d’autres systèmes d’exploitation (tel que Linux) à jour garantit qu’ils sont également protégés contre les attaques malveillantes.
+- **Protection contre les pirates**: si le système d’exploitation permet, installez les dernières fonctionnalités antivirus et contre les logiciels malveillants sur chaque système d’exploitation de périphérique. Cela peut aider à atténuer la plupart de ces menaces. Vous pouvez protéger les systèmes d’exploitation plus modernes contre les menaces en prenant les mesures appropriées.
+- **Audit fréquemment**: infrastructure IoT de l’audit pour les problèmes de sécurité est la clé lors de la réponse aux incidents de sécurité. La plupart des systèmes d’exploitation fournissent la journalisation des événements prédéfinis qui devrait être réexaminée régulièrement pour vous assurer qu’aucune violation de la sécurité se n’est produite. Informations d’audit peuvent être envoyées sous la forme d’un flux de données de télémétrie distinct pour le service en nuage où il peut être analysé.
+- **Protégez physiquement l’infrastructure IoT**: les attaques de sécurité pires contre IoT infrastructure sont lancés à l’aide de l’accès physique aux périphériques. Une pratique de sécurité important est de protéger contre l’utilisation malveillante des ports USB et autres accès physique. Enregistre une clé découvrant les violations qui se sont produites d’accès physique, telles que l’utilisation du port USB. Là encore, Windows 10 (IoT et autres références SKU) permet la journalisation détaillée de ces événements.
+- **Informations d’identification de protéger cloud**: nuage d’identification utilisée pour configurer et exploiter un déploiement IoT est probablement le moyen le plus simple d’accéder et de compromettre un système IoT. Protéger les informations d’identification en modifiant le mot de passe fréquemment et éviter d’utiliser ces informations d’identification sur les machines publiques.
+
+Possibilités de différents périphériques IoT varient. Certains périphériques peuvent être des ordinateurs exécutant des systèmes d’exploitation courants, et certains périphériques peuvent exécuter les systèmes d’exploitation très légers. Les meilleures pratiques de sécurité décrites précédemment peuvent être applicables à ces périphériques à des degrés divers. Si fourni, de sécurité et de déploiement de meilleures pratiques supplémentaires auprès des fabricants de ces périphériques doivent être suivies.
+
+Certains périphériques hérités et contraintes ne peuvent pas ont été conçus spécifiquement pour le déploiement de IoT. Ces périphériques peuvent ne disposent pas de la possibilité de crypter les données, vous connecter à Internet ou fournir l’audit avancé. Dans ces cas, une passerelle de champ modernes et sécurisés peut agréger des données à partir de périphériques hérités et assurer la sécurité requise pour la connexion de ces périphériques sur Internet. Les passerelles de champ peuvent fournir une authentification sécurisée, la négociation de sessions cryptées, réception de commandes dans le nuage et de nombreuses autres fonctionnalités de sécurité.
