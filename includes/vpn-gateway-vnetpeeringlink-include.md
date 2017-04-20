@@ -1,0 +1,1 @@
+Il est également possible de connecter des VNets sans utilisation d’une passerelle VPN. Si vos VNets sont dans la même région, vous pouvez les connecter à l’aide de l’homologation de VNet. Pour plus d’informations, consultez l’article [VNet homologation](../articles/virtual-network/virtual-network-peering-overview.md) .

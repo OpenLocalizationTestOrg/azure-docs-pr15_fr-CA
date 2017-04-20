@@ -1,0 +1,3 @@
+Définition d’un nom de domaine personnalisé dans une application web dans le Service d’application Azure qui est à charge équilibrée par le Gestionnaire de trafic est uniquement disponible pour les sites en mode **Standard** . Avant de passer à une application web à partir du mode plan de libre Service d’application en mode partagé, Basic ou Standard, vous devez d’abord supprimer majuscules dépenses en place pour votre abonnement au Service de l’application. 
+
+Pour plus d’informations sur les modes de plan de Service d’application, y compris la manière de modifier le mode de votre site, voir [Comment faire évoluer les sites web](../articles/app-service-web/web-sites-scale.md).

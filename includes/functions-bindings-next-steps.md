@@ -1,0 +1,1 @@
+Pour plus d’informations sur les autres liaisons et les déclencheurs pour les fonctions d’Azure, consultez [fonctions d’Azure déclencheurs et la référence du développeur de liaisons](../articles/azure-functions/functions-triggers-bindings.md)

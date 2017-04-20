@@ -1,0 +1,7 @@
+Une machine virtuelle Azure prend en charge l’attachement d’un nombre de disques de données. Pour des performances optimales, vous souhaiterez limiter le nombre de disques fortement sollicités attaché à la machine virtuelle pour éviter les limitations possibles. Si tous les disques ne sont pas en cours très utilisées en même temps, le compte de stockage peut prendre en charge un plus grand nombre de disques.
+
+- **Pour les comptes de stockage standard :** Un compte de stockage standard a une vitesse maximale de la demande totale de 20 000 IOPS. L’e/s total sur l’ensemble de vos disques de l’ordinateur virtuel dans un compte de stockage standard ne doit pas dépasser cette limite.
+
+    Vous pouvez calculer le nombre de disques fortement sollicités pris en charge par un compte de stockage standard unique en fonction de la limite du taux de demande. Par exemple, pour une machine virtuelle couche base, le nombre maximal de disques fortement sollicités, est sur 66 (20 000/300 IOPS par disque) et d’un ordinateur virtuel de couche Standard, il est environ 40 (20 000/500 Ops ES/s par disque), comme indiqué dans le tableau ci-dessous. 
+ 
+- **Pour les comptes de stockage premium :** Un compte de stockage premium a un débit total maximal de Gbits/50 s. Le débit total sur l’ensemble de vos disques de l’ordinateur virtuel ne doit pas dépasser cette limite.
